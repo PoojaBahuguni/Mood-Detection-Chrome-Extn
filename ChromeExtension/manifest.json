@@ -1,0 +1,34 @@
+{
+    "name": "MOLA",
+    "version": "0.1.0",
+    "description": "Sentiment analysis of english tweets",
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab",
+        "scripting",
+        "declarativeContent",
+        "webRequest"
+    ],
+    "action": {
+       
+    },
+    "icons": {
+        "48": "images/usc_icon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.twitter.com/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 3
+}
